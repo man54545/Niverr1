@@ -1,0 +1,140 @@
+[{
+  "_id": {
+    "$oid": "64c0e59a565110cd3f865d7a"
+  },
+  "username": "Man",
+  "email": "m@gmail.com",
+  "password": "111",
+  "img": "upload/user/img-1690363290838",
+  "country": "India",
+  "desc": "This file isn't in your working directory. Teammates you share this request with won't be able to use this file. To make collaboration easier you can setup your working directory in Settings.",
+  "phone": "1234567890",
+  "isSeller": true,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1690363290848"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1690363290848"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64c0e7a600912e24f6a36311"
+  },
+  "username": "Aniket",
+  "email": "a@gmail.com",
+  "password": "111",
+  "img": "",
+  "country": "India",
+  "desc": "This file isn't in your working directory. Teammates you share this request with won't be able to use this file. To make collaboration easier you can setup your working directory in Settings.",
+  "phone": "1234567890",
+  "isSeller": true,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1690363814395"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1690363814395"
+    }
+  },
+  "__v": 0,
+  "rating": "5"
+},{
+  "_id": {
+    "$oid": "64c0e7d100912e24f6a36313"
+  },
+  "username": "Harshil",
+  "email": "h@gmail.com",
+  "password": "111",
+  "img": "upload/user/img-1690363857559",
+  "country": "Caneda",
+  "desc": "This file isn't in your working directory. Teammates you share this request with won't be able to use this file. To make collaboration easier you can setup your working directory in Settings.",
+  "phone": "0987654321",
+  "isSeller": false,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1690363857565"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1690363857565"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64c0e7f000912e24f6a36315"
+  },
+  "username": "Krish",
+  "email": "k@gmail.com",
+  "password": "111",
+  "img": "upload/user/img-1690363888817",
+  "country": "USA",
+  "desc": "This file isn't in your working directory. Teammates you share this request with won't be able to use this file. To make collaboration easier you can setup your working directory in Settings.",
+  "phone": "1234509876",
+  "isSeller": true,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1690363888820"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1690363888820"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64c0ed54525d5e871535bf2f"
+  },
+  "username": "Vraj",
+  "email": "v@gmail.com",
+  "password": "111",
+  "img": "upload/user/img-1690365268664",
+  "country": "China",
+  "desc": "This file isn't in your working directory. Teammates you share this request with won't be able to use this file. To make collaboration easier you can setup your working directory in Settings.",
+  "phone": "1234509876",
+  "isSeller": true,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1690365268666"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1690365268666"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64c257b1439983ea5f6ab86a"
+  },
+  "username": "raj",
+  "email": "r@gmail.com",
+  "password": "111",
+  "img": "upload/user/img-1690458033615",
+  "country": "Nepal",
+  "desc": "Lorem ipsum dolor consectetur notte massa sapien samet.",
+  "phone": "1212120012",
+  "isSeller": true,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1690458033646"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1690458033646"
+    }
+  },
+  "__v": 0
+}]

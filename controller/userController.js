@@ -65,7 +65,7 @@ module.exports.editUser = async (req,res) =>{
 module.exports.viewByEmail = async (req,res) =>{
     try{
         let data = await user.findOne({email : req.body.email});
-        data ? res.status(200).json(data) : res.status(200).json(null);
+        data ? res.status(200).json(data) : res.status(203).json({msg: 'user not found.'});
     }
     catch(err){
         console.log(err);
@@ -76,10 +76,10 @@ module.exports.setPass = async (req,res) =>{
     try{
         if(req.body.password == req.body.cpassword){
             let data = await user.findByIdAndUpdate(req.body.id,{password : req.body.password});
-            data ? res.status(200).json(data) : res.status(400).json("User not update.");
+            data ? res.status(200).json(data) : res.status(203).json("User not update.");
         }
         else{   
-            res.status(200).json(null);
+            res.status(203).json({msg: 'password not match.'});
         }
     }
     catch(err){

@@ -14,8 +14,13 @@ module.exports.viewAllGig = async (req,res) =>{
 
 module.exports.viewGig = async (req,res) =>{
     try{
-        let data = await gig.findById(req.params.id).populate('userId').exec();
-        data ? res.status(200).json(data) : res.status(400).json("Gig not found.");
+        if(req.params.id.length === 24){
+            let data = await gig.findById(req.params.id).populate('userId').exec();
+            data ? res.status(200).json(data) : res.status(203).json("Gig not found.");
+        }
+        else{
+            res.status(203).json("Wrong Object Id.");
+        }
     }
     catch(err){
         console.log(err);
@@ -53,8 +58,8 @@ module.exports.deleteGig = async (req,res) =>{
 }
 
 module.exports.editGig = async (req,res) =>{
-    try{
-        if(req.files.length !== 0){
+    try{    
+        if(req.files && req.files.length !== 0){
             let fdata = await gig.findById(req.params.id);
             for(var i of fdata.images){
                 fs.unlinkSync(path.join(__dirname,'..',i));
@@ -123,6 +128,16 @@ module.exports.sortByStarGigs = async (req,res)=>{
     }
 }
 
+module.exports.sortByFavGigs = async (req,res)=>{
+    try{
+        let data = await gig.find({fav : true}).populate('userId').exec();
+        data ? res.status(200).json(data) : res.status(400).json("Gigs not found.");
+    }
+    catch(err){
+        console.log(err);
+    }
+}
+
 // module.exports.sortByCatGigs = async (req,res)=>{
 //     try{
 //         let data = await gig.find({cat : req.params.cat}).populate('userId').exec();
@@ -162,7 +177,7 @@ module.exports.searchGig = async (req,res) =>{
 module.exports.viewLimitGig = async (req,res) =>{
     try{
         let data = await gig.find({}).limit(4).sort({_id : -1}).populate('userId').exec();
-        data ? res.status(200).json(data) : res.status(200).json(null);
+        data ? res.status(200).json(data) : res.status(203).json({msg: 'Gigs not found.'});
     }
     catch(err){
         console.log(err);

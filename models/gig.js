@@ -52,7 +52,10 @@ const gigSchema = mongoose.Schema({
     },
     feachers : {
         type : Array,
-        // required : true
+    },
+    fav : {
+        type : Boolean,
+        default : false
     },
     sales : {   
         type : Number,

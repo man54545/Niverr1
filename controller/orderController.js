@@ -57,8 +57,40 @@ module.exports.editOrder = async (req,res) =>{
 
 module.exports.viewOrderByBuyer = async (req,res)=>{
     try{
-        let data = await order.find({buyerId : req.params.buyerId}).populate('gigId').exec();
-        data ? res.status(200).json(data) : res.status(400).json("Order not found.");
+        let page = 1;
+        let per_page = 5;
+        let search = '';
+
+        if(req.body.page){
+            page = JSON.parse(req.body.page);
+        }
+        if(req.body.per_page){
+            per_page = JSON.parse(req.body.per_page);
+        }
+        if(req.body.search){
+            search = req.body.search;
+        }
+
+        let data = await order.find({buyerId : req.params.buyerId,
+            $or : [
+                {title : {$regex : '.*'+search+'.*'}}
+            ]
+        }).skip((page - 1) * per_page).populate('gigId').limit(per_page).exec();
+
+        let total = await order.find({buyerId : req.params.buyerId,
+            $or : [
+                {title : {$regex : '.*'+search+'.*'}}
+            ]
+        }).countDocuments();
+
+        data ? res.status(200).json({
+            total : Math.ceil(total/per_page),
+            cur : page,
+            next : page + 1,
+            prev : page - 1,
+            search : search,
+            data : data,
+        }) : res.status(400).json("Order not found.");
     }
     catch(err){
         console.log(err);

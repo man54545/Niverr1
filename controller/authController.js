@@ -32,11 +32,11 @@ module.exports.login = async (req,res) =>{
                 res.cookie('user',jwtData).status(200).json(data);
             }
             else{
-                res.status(200).json(null);
+                res.status(203).json({msg: "wrong password."});
             }
         }
         else{
-            res.status(200).json(null);
+            res.status(203).json({msg: "user not register."});
         }
     }
     catch(err){

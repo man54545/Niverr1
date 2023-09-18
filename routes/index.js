@@ -8,6 +8,8 @@ routes.use('/gig', require('./gig'));
 routes.use('/order', require('./order'));
 routes.use('/review', require('./review'));
 routes.use('/chat', require('./chat'));
+routes.use('/fav', require('./fav'));
+routes.use('/contact', require('./contact'));
 
 routes.post('/pay', async (req,res)=>{
     try {
